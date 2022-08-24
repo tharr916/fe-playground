@@ -1,0 +1,41 @@
+{
+  "name": "fe-playground",
+  "version": "0.0.1",
+  "description": "A playground for testing interesting patterns in frond end design and development",
+  "private": true,
+  "scripts": {
+    "announce:ts": "echo \"Compiling Typescript...\"",
+    "announce:scss": "echo \"Preprocessing SASS... \"",
+    "build": "webpack --mode=production --node-env=production",
+    "build:css": "npm run announce:scss && npm run --silent process:css",
+    "build:js": "npm run announce:ts && npm run --silent compile:ts",
+    "process:css": "sass src/styles.scss ./dist/styles.css",
+    "compile:ts": "tsc src/index.ts --outDir dist",
+    "start": "npm run build && live-server --open=dist/index.html",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch",
+    "serve": "webpack serve"
+  },
+  "author": "Timothy M. Harrington <tharrington916@gmail.com> (https://tharr916.com/)",
+  "homepage": "https://github.com/tharr916/fe-development/readme.md",
+  "license": "ISC",
+  "devDependencies": {
+    "@webpack-cli/generators": "^2.5.0",
+    "html-webpack-plugin": "^5.5.0",
+    "live-server": "^1.2.2",
+    "mini-css-extract-plugin": "^2.6.1",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.54.5",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.0"
+  },
+  "dependencies": {}
+}
